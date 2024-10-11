@@ -67,7 +67,7 @@ const World = () => {
               <img src={moon.img} alt={moon.name} />
             </div>
           </div>
-          <div id="explanation" className="flex flex-col w-[539px] gap-y-10">
+          <div id="explanation" className="flex flex-col w-[539px] gap-y-10 self-center">
             <div id="explanation2" className="flex flex-col w-[445px] gap-y-10">
               <div id="destinations-tabs" className="flex flex-row h-8 gap-8">
                 {destinations.map(({ name }, index) => {
@@ -81,6 +81,43 @@ const World = () => {
                     </div>
                   );
                 })}
+              </div>
+              <div id="text" className="flex flex-col gap-y-4">
+                <div
+                  id="1sttext"
+                  className="font-Bellefair text-[100px] text-white tracking-[0px]"
+                >
+                  MOON
+                </div>
+                <div
+                  id="paragraph"
+                  className="font-BarlowRegular text-[18px] text-blue-300"
+                >
+                  See our planet as you’ve never seen it before. A perfect
+                  relaxing trip away to help regain perspective and come back
+                  refreshed. While you’re there, take in some history by
+                  visiting the Luna 2 and Apollo 11 landing sites.
+                </div>
+              </div>
+              <div
+                id="lineSeparator"
+                className="flex-grow h-[1px] bg-slate-700 z-10"
+              ></div>
+              <div id="statistics" className="flex flex-row h-[61px] gap-6">
+                <div id="distance" className="flex flex-col gap-y-3 ">
+                  <div
+                    id="text"
+                    className="font-BarlowCondensed text-[16px] text-blue-300 tracking-[2px]"
+                  >AVG. DISTANCE</div>
+                  <div id="number" className="font-Bellefair text-[28px] text-white">384,400 KM</div>
+                </div>
+                <div id="travel" className="flex flex-col gap-y-3 ">
+                  <div
+                    id="text"
+                    className="font-BarlowCondensed text-[16px] text-blue-300 tracking-[2px]"
+                  >EST. TRAVEL TIME</div>
+                  <div id="number" className="font-Bellefair text-[28px] text-white">3 DAYS</div>
+                </div>
               </div>
             </div>
           </div>
