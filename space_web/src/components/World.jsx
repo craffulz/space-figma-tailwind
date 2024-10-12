@@ -3,6 +3,8 @@ import Mars from "../assets/destination/image-mars.webp";
 import Europa from "../assets/destination/image-europa.webp";
 import Titan from "../assets/destination/image-titan.webp";
 
+import { useState } from "react";
+
 const World = () => {
   const destinations = [
     {
@@ -39,8 +41,18 @@ const World = () => {
     },
   ];
 
-  //const [moon, mars, europa, titan] = destinations;
-  const moon = destinations[0];
+  const [world, setWorld] = useState(destinations[0]);
+
+  const handleClick = (event) => {
+    //Buscar el texto en el array y devolver ese objeto que satisfaga la condicion que le pasemos
+    setWorld(
+      destinations.find((value) => value.name === event.target.textContent)
+    );
+    console.log(
+      destinations.find((value) => value.name === event.target.textContent)
+    );
+  };
+
   return (
     <div id="main" className="flex flex-col items-center gap-y-4 py-12">
       <div id="content" className="flex flex-col w-[1110px] gap-y-6 ">
@@ -64,10 +76,13 @@ const World = () => {
             className="flex flex-row w-[539px] h-[734px] items-center justify-center "
           >
             <div id="image" className="flex w-[480px] h-[480px] ">
-              <img src={moon.img} alt={moon.name} />
+              <img src={world.img} alt={world.name} />
             </div>
           </div>
-          <div id="explanation" className="flex flex-col w-[539px] gap-y-10 self-center">
+          <div
+            id="explanation"
+            className="flex flex-col w-[539px] gap-y-10 self-center"
+          >
             <div id="explanation2" className="flex flex-col w-[445px] gap-y-10">
               <div id="destinations-tabs" className="flex flex-row h-8 gap-8">
                 {destinations.map(({ name }, index) => {
@@ -76,6 +91,9 @@ const World = () => {
                       id="tab"
                       className="flex flex-row font-BarlowCondensed text-4 tracking-[2px] text-white cursor-pointer hover:border-b-[3px] border-white border-opacity-40"
                       key={index}
+                      onClick={(event) => {
+                        handleClick(event);
+                      }}
                     >
                       {name}
                     </div>
@@ -87,16 +105,13 @@ const World = () => {
                   id="1sttext"
                   className="font-Bellefair text-[100px] text-white tracking-[0px]"
                 >
-                  MOON
+                  {world.name}
                 </div>
                 <div
                   id="paragraph"
                   className="font-BarlowRegular text-[18px] text-blue-300"
                 >
-                  See our planet as you’ve never seen it before. A perfect
-                  relaxing trip away to help regain perspective and come back
-                  refreshed. While you’re there, take in some history by
-                  visiting the Luna 2 and Apollo 11 landing sites.
+                  {world.description}
                 </div>
               </div>
               <div
@@ -108,15 +123,29 @@ const World = () => {
                   <div
                     id="text"
                     className="font-BarlowCondensed text-[16px] text-blue-300 tracking-[2px]"
-                  >AVG. DISTANCE</div>
-                  <div id="number" className="font-Bellefair text-[28px] text-white">384,400 KM</div>
+                  >
+                    AVG. DISTANCE
+                  </div>
+                  <div
+                    id="number"
+                    className="font-Bellefair text-[28px] text-white"
+                  >
+                    {world.distance.toUpperCase()}
+                  </div>
                 </div>
                 <div id="travel" className="flex flex-col gap-y-3 ">
                   <div
                     id="text"
                     className="font-BarlowCondensed text-[16px] text-blue-300 tracking-[2px]"
-                  >EST. TRAVEL TIME</div>
-                  <div id="number" className="font-Bellefair text-[28px] text-white">3 DAYS</div>
+                  >
+                    EST. TRAVEL TIME
+                  </div>
+                  <div
+                    id="number"
+                    className="font-Bellefair text-[28px] text-white"
+                  >
+                    {world.travel.toUpperCase()}
+                  </div>
                 </div>
               </div>
             </div>

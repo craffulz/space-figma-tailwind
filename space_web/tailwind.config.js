@@ -12,6 +12,9 @@ export default {
         home: "url('./src/assets/home/background-home-desktop.jpg')",
         destination:
           "url('./src/assets/destination/background-destination-desktop.jpg')",
+        crew: "url('./src/assets/destination/background-crew-desktop.jpg')",
+        crew_Mobile:
+          "url('./src/assets/destination/background-destination-mobile.jpg')",
       },
       spacing: {
         "-32": "-32px",

@@ -44,7 +44,7 @@ const Navbar = () => {
               key={index}
               to={path}
               id="link"
-              className="flex flex-col font-BarlowCondensed text-[16px] tracking-[2px]  gap-[8px] h-[96px] hover:border-b-4 border-opacity- shadow-white cursor-pointer justify-center"
+              className="flex flex-col font-BarlowCondensed text-[16px] tracking-[2px] gap-[8px] h-[96px] border-b-4 border-transparent hover:border-white hover:border-opacity-30 cursor-pointer justify-center"
             >
               <div id="inside-link" className="flex flex-row gap-[12px]">
                 <div id="number" className="font-bold">
