@@ -36,7 +36,7 @@ const Biography = () => {
   return (
     <div
       id="main-content"
-      className="w-full flex flex-col gap-y-2 p-6 md:p-[48px] lg:py-[48px] lg:px-[150px] "
+      className="w-full flex flex-col gap-y-2 p-6 md:p-[48px] lg:py-[48px] lg:px-[150px] overflow-hidden"
     >
       <div id="content" className="flex flex-col gap-y-6 ">
         <div
@@ -78,7 +78,7 @@ const Biography = () => {
                   </div>
                   <div
                     id="name"
-                    className="h-[28px] text-center md:h-[46px] font-Bellefair text-white md:text-5xl justify-center lg:self-start"
+                    className="h-[28px] text-center md:h-[46px] font-Bellefair text-white text-2xl md:text-5xl justify-center lg:self-start"
                   >
                     {mark.name.toUpperCase()}
                   </div>
@@ -123,7 +123,7 @@ const Biography = () => {
               <img src={mark.img} alt={mark.name} />
               <div
                 id="mask"
-                className="h-[340px] md:h-[560px] lg:h-[676px]  absolute inset-1 bg-gradient-to-b from-transparent to-black"
+                className="absolute bottom-[-40px] md:bottom-[-90px] md:left-[50px] lg:bottom-[-30px] lg:left-[56px] inset-0 bg-gradient-to-b from-transparent to-blueH pointer-events-none h-[90px] w-[280px] self-end"
               ></div>
             </div>
           </div>

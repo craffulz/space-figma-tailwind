@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        blueH: "#0B0E17", // Reemplaza con el valor hexadecimal del color
+      },
       fontFamily: {
         Bellefair: ["Bellefair", "sans-serif"],
         BarlowRegular: ["Barlow-Regular", "sans-serif"],
@@ -13,6 +16,7 @@ export default {
         destination:
           "url('./src/assets/destination/background-destination-desktop.jpg')",
         crew: "url('./src/assets/crew/background-crew-desktop.jpg')",
+        crew_tablet: "url('./src/assets/crew/background-crew-tablet.jpg')",
         crew_Mobile: "url('./src/assets/crew/background-crew-mobile.jpg')",
       },
     },

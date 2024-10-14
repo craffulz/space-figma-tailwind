@@ -18,7 +18,7 @@ const MobileNavbar = () => {
     <>
       <div
         id="navigation"
-        className="flex flex-row flex-grow w-full h-[88px] py-6 justify-between"
+        className="flex flex-row flex-grow w-full h-[88px] py-6 justify-between overflow-hidden"
       >
         <div id="logo" className="flex flex-row gap-[64px] pl-6">
           <div id="true-logo" className="h-[40px] w-[40px]">
