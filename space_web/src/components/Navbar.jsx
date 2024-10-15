@@ -13,7 +13,7 @@ const Navbar = () => {
     /**
      * Logo
      */
-    <div className="flex flex-row w-full h-[136px] pt-[40px] items-center justify-center">
+    <div className="flex flex-row w-full h-[136px] pt-[40px] items-center justify-center overflow-hidden">
       <div
         id="logo"
         className="flex flex-row w-[736px] h-[48px] pl-[64px] gap-[64px] items-center mr-[-8px]"

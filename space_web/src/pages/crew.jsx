@@ -1,11 +1,13 @@
+import { ScrollRestoration } from "react-router-dom";
 import Biography from "../components/Biography";
-import MobileNavbar from "../components/MobileNavbar";
+import NavbarPicker from "../components/NavbarPicker";
 
 const crew = () => {
   return (
     <div className="flex flex-col bg-crew_Mobile lg:bg-crew  bg-cover bg-center bg-fixed h-full">
-      <MobileNavbar />
-      <Biography/>
+      <ScrollRestoration/>
+      <NavbarPicker />
+      <Biography />
     </div>
   );
 };

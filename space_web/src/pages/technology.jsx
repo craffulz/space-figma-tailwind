@@ -1,13 +1,15 @@
-import MobileNavbar from "../components/MobileNavbar"
-import Vehicles from "../components/Vehicles"
+import { ScrollRestoration } from "react-router-dom";
+import NavbarPicker from "../components/NavbarPicker";
+import Vehicles from "../components/Vehicles";
 
 const technology = () => {
   return (
     <div className="flex flex-col bg-technology bg-fixed bg-cover bg-center h-full">
-      <MobileNavbar/>
-      <Vehicles/>
+      <ScrollRestoration/>
+      <NavbarPicker />
+      <Vehicles />
     </div>
-  )
-}
+  );
+};
 
-export default technology
+export default technology;
