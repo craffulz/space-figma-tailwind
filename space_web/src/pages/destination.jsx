@@ -3,7 +3,7 @@ import NavbarPicker from "../components/NavbarPicker";
 import World from "../components/World";
 const destination = () => {
   return (
-    <div className="flex flex-col bg-destination bg-fixed bg-cover  h-full w-full overflow-hidden">
+    <div className="flex flex-col bg-destination bg-fixed bg-cover min-h-screen w-full overflow-hidden">
       <ScrollRestoration/>
       <NavbarPicker />
       <World />

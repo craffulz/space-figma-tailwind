@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 const Hero = () => {
   const [hidden, setHidden] = useState("hidden");
@@ -9,17 +9,17 @@ const Hero = () => {
     setHidden("hidden");
   }
   return (
-    <div id="main" className=" flex flex-col py-[128px] gap-y-2 w-full">
-      <div
-        id="hero"
-        className="flex flex-row w-[1110px] h-[632px] self-center items-end"
-      >
-        <div id="inside-hero" className="flex flex-row gap-auto">
+    <div
+      id="main"
+      className="flex flex-col p-6 lg:py-[128px] gap-y-2 items-center min-h-center"
+    >
+      <div id="hero" className="flex flex-row">
+        <div id="inside-hero" className="flex flex-row">
           {/**Textos */}
-          <div id="texts" className="inline-block w-[540px] h-[343px] gap-y-6">
+          <div id="texts" className="flex flex-col w-[540px] gap-y-6">
             <div
               id="travel"
-              className="font-BarlowCondensed text-[28px] text-blue-200 tracking-[4px] text-left align-top"
+              className="font-BarlowCondensed text-[28px] text-blue-200 tracking-[4px] text-left"
             >
               SO, YOU WANT TO TRAVEL TO
             </div>

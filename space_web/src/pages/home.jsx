@@ -5,7 +5,7 @@ import "../index.css";
 
 const home = () => {
   return (
-    <div className="flex flex-col bg-home bg-fixed bg-cover bg-center h-full">
+    <div className="flex flex-col bg-home bg-fixed bg-cover bg-center w-full min-h-screen overflow-hidden justify-between">
       <ScrollRestoration />
       <NavbarPicker />
       <Hero />
