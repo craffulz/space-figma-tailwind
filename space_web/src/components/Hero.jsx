@@ -11,27 +11,30 @@ const Hero = () => {
   return (
     <div
       id="main"
-      className="flex flex-col p-6 lg:py-[128px] gap-y-2 items-center min-h-center"
+      className="flex flex-col p-6 md:px-10 md:py-[128px] lg:py-[128px] gap-y-2 items-center min-h-center"
     >
-      <div id="hero" className="flex flex-row">
-        <div id="inside-hero" className="flex flex-row">
+      <div id="hero" className="flex flex-row gap-[48px] ">
+        <div id="inside-hero" className="flex flex-col lg:flex-row gap-y-[70px]">
           {/**Textos */}
-          <div id="texts" className="flex flex-col w-[540px] gap-y-6">
+          <div
+            id="texts"
+            className="flex flex-col w-[327px] md:w-[512px] lg:w-[540px] gap-y-6"
+          >
             <div
               id="travel"
-              className="font-BarlowCondensed text-[28px] text-blue-200 tracking-[4px] text-left"
+              className="font-BarlowCondensed  text-blue-200 tracking-[4px]  text-xl md:text-2xl text-center lg:text-left "
             >
               SO, YOU WANT TO TRAVEL TO
             </div>
             <div
               id="space"
-              className="font-Bellefair text-[100px] tracking-[0px] text-white text-left "
+              className="font-Bellefair tracking-[0px] text-white text-center lg:text-left text-6xl md:text-8xl "
             >
               SPACE
             </div>
             <div
               id="letsFaceIt"
-              className="font-BarlowRegular text-[18px] tracking-[0px] text-blue-200 text-left "
+              className="font-BarlowRegular  tracking-[0px] text-blue-200 text-center lg:text-left "
             >
               Let’s face it; if you want to go to space, you might as well
               genuinely go to outer space and not hover kind of on the edge of
@@ -43,15 +46,18 @@ const Hero = () => {
           {/**Boton EXPLORE */}
           <div
             id="button"
-            className="flex flex-row w-[540px] h-[271px] gap-y-6 justify-end relative"
+            className="flex flex-col w-[327px] h-[382px] md:w-[512px] md:h-[272px] lg:w-[540px] lg:h-[271px] gap-y-6 items-center justify-center lg:justify-end relative"
           >
             <div
               id="explore"
-              className=" 
+              className="
               flex 
-              flex-col 
-              w-[272px] 
-              h-[272px] 
+              flex-row 
+              gap-2
+              w-[144px]
+              h-[144px]
+              md:w-[272px] 
+              md:h-[272px] 
               rounded-full 
               bg-white 
               items-center 
@@ -75,7 +81,8 @@ const Hero = () => {
                 justify-center 
                 items-center
                 font-Bellefair
-                text-[32px]
+                text-lg
+                md:text-3xl
                 tracking-[0px]
                 "
               >
