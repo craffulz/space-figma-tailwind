@@ -68,7 +68,7 @@ const Hero = () => {
               items-center 
               justify-center
               cursor-pointer
-              z-10  
+                
               "
               onMouseEnter={() => {
                 handleHover();

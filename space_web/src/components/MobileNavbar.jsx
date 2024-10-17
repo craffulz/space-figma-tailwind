@@ -5,7 +5,7 @@ import { useState } from "react";
 const MobileNavbar = () => {
   const location = useLocation().pathname;
 
-  const [visible, setVisible] = useState("hidden");
+  const [visible, setVisible] = useState(false);
   const navLinks = [
     { number: "00", text: "HOME", path: "/" },
     { number: "01", text: "DESTINATION", path: "/destination" },
@@ -13,8 +13,8 @@ const MobileNavbar = () => {
     { number: "03", text: "TECHNOLOGY", path: "/technology" },
   ];
 
-  const handleClickOnMenu = () => setVisible("");
-  const handleClickOnClose = () => setVisible("hidden");
+  const handleClickOnMenu = () => setVisible(true);
+  const handleClickOnClose = () => setVisible(false);
 
   return (
     <>
@@ -43,7 +43,9 @@ const MobileNavbar = () => {
       </div>
       <div
         id="aside"
-        className={`absolute ${visible} z-10 right-0 flex flex-col min-h-screen w-[254px] gap-y-[48px] pl-8 bg-opacity-30 backdrop-blur-2xl`}
+        className={`absolute z-12 top-0 right-0 min-h-screen w-[254px] bg-opacity-30 backdrop-blur-2xl transition-transform duration-500 ease-in-out ${
+          visible ? "translate-x-0" : "translate-x-full"
+        }  flex flex-col gap-y-[48px] pl-8`}
       >
         <div
           id="equis"
