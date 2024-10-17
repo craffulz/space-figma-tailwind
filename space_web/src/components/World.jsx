@@ -42,10 +42,18 @@ const World = () => {
   ];
 
   const [world, setWorld] = useState(destinations[0]);
+  const [isVisible, setIsVisible] = useState(true);
+
+  // useEffect para activar la animación cuando el componente se monte
 
   const handleClick = (value) => {
+    setIsVisible(false);
+
+    setTimeout(() => {
+      setWorld(value);
+      setIsVisible(true);
+    }, 200);
     //Buscar el texto en el array y devolver ese objeto que satisfaga la condicion que le pasemos
-    setWorld(value);
   };
 
   return (
@@ -73,7 +81,9 @@ const World = () => {
         </div>
         <div
           id="content"
-          className="flex flex-col lg:flex-row gap-y-8 lg:gap-8"
+          className={`flex flex-col lg:flex-row gap-y-8 lg:gap-8  transition-opacity duration-500 ease-in-out ${
+            isVisible ? "opacity-100" : "opacity-0"
+          } `}
         >
           <div
             id="image container"
