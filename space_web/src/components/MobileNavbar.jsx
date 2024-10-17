@@ -1,8 +1,10 @@
 import logo from "../assets/shared/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const MobileNavbar = () => {
+  const location = useLocation().pathname;
+
   const [visible, setVisible] = useState("hidden");
   const navLinks = [
     { number: "00", text: "HOME", path: "/" },
@@ -22,7 +24,7 @@ const MobileNavbar = () => {
       >
         <div id="logo" className="flex flex-row gap-[64px] pl-6">
           <div id="true-logo" className="h-[40px] w-[40px]">
-            <Link to='/'>
+            <Link to="/">
               <img src={logo} alt="logo de la pagina web"></img>
             </Link>
           </div>
@@ -41,7 +43,7 @@ const MobileNavbar = () => {
       </div>
       <div
         id="aside"
-        className={`absolute ${visible} z-10 right-0 flex flex-col h-full w-[254px]  gap-y-[48px] pl-8 opacity-50 backdrop-blur-[8px]`}
+        className={`absolute ${visible} z-10 right-0 flex flex-col min-h-screen w-[254px] gap-y-[48px] pl-8 bg-opacity-30 backdrop-blur-2xl`}
       >
         <div
           id="equis"
@@ -74,7 +76,9 @@ const MobileNavbar = () => {
                   to={path}
                   id="link"
                   key={index}
-                  className="flex flex-row gap-3 border-r-transparent hover:border-white hover:border-opacity-30 cursor-pointer"
+                  className={`flex flex-row gap-3 border-r-4 ${
+                    path === location ? "border-white" : "border-transparent"
+                  } hover:border-gray-600 cursor-pointer`}
                 >
                   <div
                     id="number"

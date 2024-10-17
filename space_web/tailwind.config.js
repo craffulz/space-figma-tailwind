@@ -17,14 +17,21 @@ export default {
         //backgrounds for destination
         destination:
           "url('./src/assets/destination/background-destination-desktop.jpg')",
+        destination_tablet:
+          "url('./src/assets/destination/background-destination-tablet.jpg')",
+        destination_mobile:
+          "url('./src/assets/destination/background-destination-mobile.jpg')",
         //backgrounds for crew
         crew: "url('./src/assets/crew/background-crew-desktop.jpg')",
         crew_tablet: "url('./src/assets/crew/background-crew-tablet.jpg')",
         crew_Mobile: "url('./src/assets/crew/background-crew-mobile.jpg')",
         //backgrounds for technology
-        technology: "url('./src/assets/technology/background-technology-desktop.jpg')",
-        technology_tablet: "url('./src/assets/technology/background-technology-tablet.jpg')",
-        technology_mobile: "url('./src/assets/technology/background-technology-mobile.jpg')",
+        technology:
+          "url('./src/assets/technology/background-technology-desktop.jpg')",
+        technology_tablet:
+          "url('./src/assets/technology/background-technology-tablet.jpg')",
+        technology_mobile:
+          "url('./src/assets/technology/background-technology-mobile.jpg')",
       },
     },
   },

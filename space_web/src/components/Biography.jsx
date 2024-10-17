@@ -3,45 +3,59 @@ import douglas from "../assets/crew/image-douglas-hurley.webp";
 import cark from "../assets/crew/image-mark-shuttleworth.webp";
 import victor from "../assets/crew/image-victor-glover.webp";
 
-const Biography = () => {
-  const crew = [
-    {
-      name: "Douglas Hurley",
-      img: douglas,
-      role: "Commander",
-      bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
-    },
-    {
-      name: "Mark Shuttleworth",
-      img: cark,
-      role: "Mission Specialist",
-      bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
-    },
-    {
-      name: "Victor Glover",
-      img: victor,
-      role: "Pilot",
-      bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
-    },
-    {
-      name: "Anousheh Ansari",
-      img: anoush,
-      role: "Flight Engineer",
-      bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
-    },
-  ];
+import { useState, useRef } from "react";
 
-  const mark = crew[0];
+const crew = [
+  {
+    name: "Douglas Hurley",
+    img: douglas,
+    role: "Commander",
+    bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
+  },
+  {
+    name: "Mark Shuttleworth",
+    img: cark,
+    role: "Mission Specialist",
+    bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
+  },
+  {
+    name: "Victor Glover",
+    img: victor,
+    role: "Pilot",
+    bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
+  },
+  {
+    name: "Anousheh Ansari",
+    img: anoush,
+    role: "Flight Engineer",
+    bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
+  },
+];
+
+const Biography = () => {
+  const refs = useRef([]);
+
+  //Data a mostrar
+  const [data, setData] = useState(crew[0]);
+
+  //funcion que setea la Data a mostrar y cambia el 'active' dot
+  function handleDotClick(index, value) {
+    console.log(value);
+    setData(value);
+    refs.current[index].classList.add("bg-white");
+  }
+
+  const mark = data;
 
   return (
     <div
       id="main-content"
-      className="w-full flex flex-col gap-y-2 p-6 md:p-[48px] lg:py-[48px] lg:px-[150px] overflow-hidden"
+      className="w-full flex flex-col gap-y-2 p-6 pb-0 md:p-[48px] md:pb-0 lg:py-[48px] lg:px-[150px] overflow-hidden lg:items-center"
     >
       <div id="content" className="flex flex-col gap-y-6 ">
         <div
           id="page-title"
-          className="flex flex-row gap-6 self-center items-center h-[19px] md:h-[24px] md:self-start "
+          className="flex flex-row gap-6 text-white justify-center lg:justify-start"
         >
           <div
             id="number"
@@ -68,7 +82,10 @@ const Biography = () => {
               id="explanation-true"
               className="flex flex-col gap-y-6 pt-10 lg:pt-0 lg:h-[631px] justify-center"
             >
-              <div id="expl3" className="flex flex-col gap-y-6">
+              <div
+                id="expl3"
+                className="flex flex-col gap-y-6 md:h-[231px] lg:h-auto"
+              >
                 <div id="rankName" className="flex flex-col gap-y-2 md:gap-y-6">
                   <div
                     id="rank"
@@ -78,7 +95,7 @@ const Biography = () => {
                   </div>
                   <div
                     id="name"
-                    className="h-[28px] text-center md:h-[46px] font-Bellefair text-white text-2xl md:text-5xl justify-center lg:self-start"
+                    className="h-[28px] text-center md:h-[46px] lg:h-auto lg:text-start font-Bellefair text-white text-2xl md:text-5xl justify-center lg:self-start "
                   >
                     {mark.name.toUpperCase()}
                   </div>
@@ -96,34 +113,39 @@ const Biography = () => {
               className="flex flex-col h-[10px] gap-y-2 lg:h-[64px] self-center lg:self-start"
             >
               <div id="dots" className="flex flex-row gap-4 lg:gap-10">
-                <div
-                  id="dot"
-                  className="h-[10px] w-[10px] lg:h-[15px] lg:w-[15px] rounded-full bg-gray-600"
-                ></div>
-                <div
-                  id="dot"
-                  className="h-[10px] w-[10px] lg:h-[15px] lg:w-[15px] rounded-full bg-gray-600"
-                ></div>
-                <div
-                  id="dot"
-                  className="h-[10px] w-[10px] lg:h-[15px] lg:w-[15px] rounded-full bg-gray-600"
-                ></div>
-                <div
-                  id="dot"
-                  className="h-[10px] w-[10px] lg:h-[15px] lg:w-[15px] rounded-full bg-gray-600"
-                ></div>
+                {crew.map((value, index) => {
+                  return (
+                    <div
+                      key={index}
+                      id={value.name}
+                      className={`h-[10px] w-[10px] lg:h-[15px] lg:w-[15px] rounded-full ${
+                        value.name === data.name ? "bg-white" : "bg-gray-600"
+                      } hover:bg-gray-400 cursor-pointer`}
+                      ref={(el) => (refs.current[index] = el)}
+                      onClick={() => handleDotClick(index, value)}
+                    ></div>
+                  );
+                })}
               </div>
             </div>
           </div>
-          <div id="image" className="flex flex-row self-center">
+          <div id="image" className="flex flex-row justify-center">
+            {/* <div
+              id="crew-image"
+              className="flw-[270px] h-[340px] md:w-[446px] md:h-[560px] lg:w-[540px] lg:h-[676px] relative "
+            ></div>*/}
             <div
               id="crew-image"
-              className="w-[270px] h-[340px] md:w-[446px] md:h-[560px] lg:w-[540px] lg:h-[676px] relative"
+              className="flex lg:items-end  md:h-[560px] lg:w-[540px] lg:h-[676px] relative"
             >
-              <img src={mark.img} alt={mark.name} />
+              <img
+                src={mark.img}
+                alt={mark.name}
+                className="object-cover lg:object-contain"
+              />
               <div
                 id="mask"
-                className="absolute bottom-[-40px] md:bottom-[-90px] md:left-[50px] lg:bottom-[-30px] lg:left-[56px] inset-0 bg-gradient-to-b from-transparent to-blueH pointer-events-none h-[90px] w-[280px] self-end"
+                className="absolute bottom-[0px] md:bottom-[-0px] md:left-[0px] lg:bottom-0 lg:left-0 inset-0 bg-gradient-to-b from-transparent to-blueH pointer-events-none h-[90px] w-[550px] self-end"
               ></div>
             </div>
           </div>

@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/shared/logo.svg";
 
 const Navbar = () => {
+  const location = useLocation().pathname;
+
   const navLinks = [
     { number: "00", text: "HOME", path: "/" },
     { number: "01", text: "DESTINATION", path: "/destination" },
@@ -18,12 +20,16 @@ const Navbar = () => {
         id="logo"
         className="flex flex-row w-[736px] h-[48px] pl-[64px] gap-[64px] items-center mr-[-8px]"
       >
-        <div id="logo-logo" className="w-[48px] h-[48px] cursor-pointer">
+        <Link
+          to="/"
+          id="logo-logo"
+          className="w-[48px] h-[48px] cursor-pointer"
+        >
           <img src={logo} alt="logo de space_web" />
-        </div>
+        </Link>
         <div
           id="lineSeparator"
-          className="flex-grow h-[1px] bg-slate-700 z-10"
+          className="hidden lg:flex lg:flex-grow h-[1px] bg-slate-700 z-10"
         ></div>
       </div>
 
@@ -44,7 +50,9 @@ const Navbar = () => {
               key={index}
               to={path}
               id="link"
-              className="flex flex-col font-BarlowCondensed text-[16px] tracking-[2px] gap-[8px] h-[96px] border-b-4 border-transparent hover:border-white hover:border-opacity-30 cursor-pointer justify-center"
+              className={`flex flex-col font-BarlowCondensed text-[16px] tracking-[2px] gap-[8px] h-[96px] border-b-4 ${
+                location === path ? "border-white" : "border-transparent"
+              } hover:border-white hover:border-opacity-30 cursor-pointer justify-center`}
             >
               <div id="inside-link" className="flex flex-row gap-[12px]">
                 <div id="number" className="font-bold">

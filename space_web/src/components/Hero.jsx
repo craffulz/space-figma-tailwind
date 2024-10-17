@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [hidden, setHidden] = useState("hidden");
@@ -14,7 +15,10 @@ const Hero = () => {
       className="flex flex-col p-6 md:px-10 md:py-[128px] lg:py-[128px] gap-y-2 items-center min-h-center"
     >
       <div id="hero" className="flex flex-row gap-[48px] ">
-        <div id="inside-hero" className="flex flex-col lg:flex-row gap-y-[70px]">
+        <div
+          id="inside-hero"
+          className="flex flex-col lg:flex-row gap-y-[70px]"
+        >
           {/**Textos */}
           <div
             id="texts"
@@ -28,7 +32,7 @@ const Hero = () => {
             </div>
             <div
               id="space"
-              className="font-Bellefair tracking-[0px] text-white text-center lg:text-left text-6xl md:text-8xl "
+              className="font-Bellefair tracking-[0px] text-white text-center lg:text-left text-8xl md:text-8xl "
             >
               SPACE
             </div>
@@ -46,9 +50,10 @@ const Hero = () => {
           {/**Boton EXPLORE */}
           <div
             id="button"
-            className="flex flex-col w-[327px] h-[382px] md:w-[512px] md:h-[272px] lg:w-[540px] lg:h-[271px] gap-y-6 items-center justify-center lg:justify-end relative"
+            className="flex flex-col w-[327px] h-[382px] md:w-[512px] md:h-[272px] lg:w-[540px] lg:h-[271px] gap-y-6 items-center justify-center relative"
           >
-            <div
+            <Link
+              to="/destination"
               id="explore"
               className="
               flex 
@@ -63,7 +68,8 @@ const Hero = () => {
               items-center 
               justify-center
               cursor-pointer
-              z-10"
+              z-10  
+              "
               onMouseEnter={() => {
                 handleHover();
               }}
@@ -88,10 +94,10 @@ const Hero = () => {
               >
                 EXPLORE
               </div>
-            </div>
+            </Link>
             <div
               id="hoverExplore"
-              className={`absolute z-1 right-[-85px] top-[-85px] w-[444px] h-[444px] rounded-full bg-white opacity-15 cursor-pointer ${hidden}`}
+              className={`absolute z-1 w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full bg-white opacity-15 cursor-pointer ${hidden}`}
             ></div>
           </div>
         </div>

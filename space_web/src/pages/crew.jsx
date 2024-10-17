@@ -4,7 +4,7 @@ import NavbarPicker from "../components/NavbarPicker";
 
 const crew = () => {
   return (
-    <div className="flex flex-col bg-crew_Mobile lg:bg-crew  bg-cover bg-center bg-fixed h-full">
+    <div className="flex flex-col bg-crew_Mobile md:bg-crew_tablet lg:bg-crew  bg-cover bg-center bg-fixed h-full">
       <ScrollRestoration/>
       <NavbarPicker />
       <Biography />
