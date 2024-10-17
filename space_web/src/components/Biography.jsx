@@ -80,7 +80,7 @@ const Biography = () => {
           >
             <div
               id="explanation-true"
-              className="flex flex-col gap-y-6 pt-10 lg:pt-0 lg:h-[631px] justify-center"
+              className="flex flex-col gap-y-6 pt-10 h-[317px] lg:pt-0 lg:h-[631px] justify-center"
             >
               <div
                 id="expl3"

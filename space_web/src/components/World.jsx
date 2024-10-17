@@ -106,7 +106,11 @@ const World = () => {
                         value.name === world.name
                           ? "border-white"
                           : "border-transparent"
-                      } hover:border-gray-600`}
+                      } 
+                      hover:border-gray-600
+                      focus:border-white
+                      active:border-white
+                      focus:outline-none`}
                       key={index}
                       onClick={() => {
                         handleClick(value);
@@ -119,7 +123,7 @@ const World = () => {
               </div>
               <div
                 id="text"
-                className="flex flex-col gap-y-4 md:items-center lg:items-start lg:h-[254px]"
+                className="flex flex-col gap-y-4 h-[215px] md:items-center lg:items-start lg:h-[254px]"
               >
                 <div
                   id="1sttext"

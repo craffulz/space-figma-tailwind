@@ -103,14 +103,21 @@ const Vehicles = () => {
                     key={index}
                     id="dot"
                     onClick={() => handleClick(value)}
-                    className={`flex w-[40px] h-[40px] md:w-[56px] md:h-[56px] lg:w-[80px] lg:h-[80px] rounded-full ${data.name === value.name? 'bg-white' : 'bg-transparent'} text-center text-${data.name === value.name? 'transparent' : 'white'} border border-gray-600 items-center justify-center font-Bellefair lg:text-xl cursor-pointer`}
+                    className={`flex w-[40px] h-[40px] md:w-[56px] md:h-[56px] lg:w-[80px] lg:h-[80px] rounded-full ${
+                      data.name === value.name ? "bg-white" : "bg-transparent"
+                    } text-center text-${
+                      data.name === value.name ? "transparent" : "white"
+                    } border border-gray-600 items-center justify-center font-Bellefair lg:text-xl cursor-pointer`}
                   >
                     {index + 1}
                   </div>
                 );
               })}
             </div>
-            <div id="expl3" className="flex flex-col gap-y-6">
+            <div
+              id="expl3"
+              className="flex flex-col gap-y-6 h-[243px] md:h-[252px] lg:h-[301px]"
+            >
               <div id="rankName" className="flex flex-col gap-y-2 md:gap-y-6">
                 <div
                   id="rank"
