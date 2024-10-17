@@ -4,8 +4,8 @@ import Vehicles from "../components/Vehicles";
 
 const technology = () => {
   return (
-    <div className="flex flex-col bg-technology bg-fixed bg-cover bg-center min-h-screen overflow-hidden">
-      <ScrollRestoration/>
+    <div className="flex flex-col bg-technology_mobile md:bg-technology_tablet lg:bg-technology bg-fixed bg-cover bg-center min-h-screen overflow-hidden">
+      <ScrollRestoration />
       <NavbarPicker />
       <Vehicles />
     </div>
