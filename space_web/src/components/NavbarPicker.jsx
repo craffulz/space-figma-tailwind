@@ -1,19 +1,36 @@
+import  { useState, useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import MobileNavbar from "./MobileNavbar";
 
-import { useState } from "react";
-
 const NavbarPicker = () => {
   const [width, setWidth] = useState(window.innerWidth);
-  //Function that changes between Navbar
+  const ref = useRef();
 
-  function handleResize() {
-    setWidth(window.innerWidth);
-    
-  }
-  window.addEventListener("resize", handleResize);
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      if (ref.current) {
+        setWidth(ref.current.clientWidth);
+      }
+    });
 
-  return width > 440 ? <Navbar /> : <MobileNavbar />;
+    const currentRef = ref.current; // Copiar el valor de ref.current
+
+    if (currentRef) {
+      resizeObserver.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        resizeObserver.unobserve(currentRef); // Usar currentRef en la limpieza
+      }
+    };
+  }, [ref]); // Nota: El ref en sí no necesita estar en las dependencias
+
+  return (
+    <div ref={ref} className="w-full">
+      {width > 440 ? <Navbar /> : <MobileNavbar />}
+    </div>
+  );
 };
 
 export default NavbarPicker;

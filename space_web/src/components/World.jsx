@@ -59,7 +59,7 @@ const World = () => {
   return (
     <div
       id="main"
-      className="flex flex-col  gap-y-2 p-6 md:p-10 lg:py-12 lg:px-0 items-center overflow-hidden"
+      className="flex flex-col min-h-screen gap-y-2 p-6 md:p-10 lg:py-12 lg:px-0 items-center overflow-hidden"
     >
       <div id="content" className="flex flex-col gap-y-6 ">
         <div
