@@ -6,7 +6,7 @@ import "../index.css";
 const home = () => {
   return (
     <div
-      className={`flex flex-col bg-home_mobile md:bg-home_tablet lg:bg-home bg-fixed bg-cover bg-center w-full md:min-h-screen overflow-hidden justify-between relative`}
+      className={`flex flex-col bg-home_mobile md:bg-home_tablet lg:bg-home bg-fixed w-full md:min-h-screen overflow-hidden justify-between relative`}
     >
       <ScrollRestoration />
       <NavbarPicker />
