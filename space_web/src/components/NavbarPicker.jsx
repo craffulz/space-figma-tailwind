@@ -13,7 +13,7 @@ const NavbarPicker = () => {
   }
   window.addEventListener("resize", handleResize);
 
-  return width > 415 ? <Navbar /> : <MobileNavbar />;
+  return width > 440 ? <Navbar /> : <MobileNavbar />;
 };
 
 export default NavbarPicker;

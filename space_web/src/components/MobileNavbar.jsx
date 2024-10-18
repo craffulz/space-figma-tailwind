@@ -43,8 +43,8 @@ const MobileNavbar = () => {
       </div>
       <div
         id="aside"
-        className={`absolute z-12 top-0 right-0 min-h-screen w-[254px] bg-opacity-30 backdrop-blur-2xl transition-transform duration-500 ease-in-out ${
-          visible ? "translate-x-0" : "translate-x-full"
+        className={`absolute z-12 top-0 right-0 min-h-screen  bg-opacity-30 backdrop-blur-2xl transition-transform duration-500 ease-in-out ${
+          visible ? "translate-x-0 w-[254px]" : "w-[0px] translate-x-full "
         }  flex flex-col gap-y-[48px] pl-8`}
       >
         <div
