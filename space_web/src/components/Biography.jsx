@@ -50,7 +50,7 @@ const Biography = () => {
   return (
     <div
       id="main-content"
-      className="w-full flex flex-col gap-y-2 p-6 pb-0 md:p-[48px] md:pb-0 lg:py-[48px] lg:px-[150px] overflow-hidden lg:items-center"
+      className="w-full flex flex-col gap-y-2 p-6 pb-0 md:p-[48px] md:pb-0 lg:py-[48px] lg:px-[150px]  lg:items-center overflow-hidden"
     >
       <div id="content" className="flex flex-col gap-y-6 ">
         <div
