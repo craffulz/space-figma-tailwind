@@ -44,8 +44,8 @@ const MobileNavbar = () => {
       <div
         id="aside"
         className={`absolute overflow-y-scroll z-12 top-0 right-0 h-screen bg-opacity-30 backdrop-blur-2xl transition-all duration-500 ease-in-out ${
-          visible ? "w-[254px]" : "w-0 pl-0"
-        }  flex flex-col gap-y-[48px] pl-8`}
+          visible ? "w-[254px] pl-8" : "w-0 pl-0"
+        }  flex flex-col gap-y-[48px]`}
       >
         <div
           id="equis"
