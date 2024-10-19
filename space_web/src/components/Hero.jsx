@@ -1,14 +1,7 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const [hidden, setHidden] = useState("hidden");
-  function handleHover() {
-    setHidden("");
-  }
-  function handleLeave() {
-    setHidden("hidden");
-  }
   return (
     <div
       id="main"
@@ -52,8 +45,7 @@ const Hero = () => {
             id="button"
             className="flex flex-col w-[327px] h-[382px] md:w-[512px] md:h-[272px] lg:w-[540px] lg:h-[271px] gap-y-6 items-center justify-center relative"
           >
-            <Link
-              to="/destination"
+            <div
               id="explore"
               className="
               flex 
@@ -70,12 +62,6 @@ const Hero = () => {
               cursor-pointer
                 
               "
-              onMouseEnter={() => {
-                handleHover();
-              }}
-              onMouseLeave={() => {
-                handleLeave();
-              }}
             >
               <div
                 id="text"
@@ -94,11 +80,12 @@ const Hero = () => {
               >
                 EXPLORE
               </div>
-            </Link>
-            <div
+            </div>
+            <Link
+              to="/destination"
               id="hoverExplore"
-              className={`absolute z-1 w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full bg-white opacity-15 cursor-pointer ${hidden}`}
-            ></div>
+              className={`transitio-all duration-1000 ease-in-out absolute z-1 w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full bg-transparent opacity-15 cursor-pointer hover:bg-white`}
+            ></Link>
           </div>
         </div>
       </div>

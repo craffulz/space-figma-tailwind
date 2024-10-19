@@ -44,22 +44,19 @@ const World = () => {
   const [world, setWorld] = useState(destinations[0]);
   const [isVisible, setIsVisible] = useState(true);
 
-  // useEffect para activar la animación cuando el componente se monte
-
   const handleClick = (value) => {
     setIsVisible(false);
 
     setTimeout(() => {
       setWorld(value);
       setIsVisible(true);
-    }, 200);
-    //Buscar el texto en el array y devolver ese objeto que satisfaga la condicion que le pasemos
+    }, 250);
   };
 
   return (
     <div
       id="main"
-      className="flex flex-col min-h-screen gap-y-2 p-6 md:p-10 lg:py-12 lg:px-0 items-center overflow-hidden"
+      className="flex flex-col gap-y-2 p-6 md:p-10 lg:py-12 lg:px-0 items-center overflow-hidden"
     >
       <div id="content" className="flex flex-col gap-y-6 ">
         <div
@@ -81,9 +78,8 @@ const World = () => {
         </div>
         <div
           id="content"
-          className={`flex flex-col lg:flex-row gap-y-8 lg:gap-8  transition-opacity duration-500 ease-in-out ${
-            isVisible ? "opacity-100" : "opacity-0"
-          } `}
+          className="flex flex-col lg:flex-row gap-y-8 lg:gap-8  
+        "
         >
           <div
             id="image container"
@@ -93,7 +89,13 @@ const World = () => {
               id="image"
               className="flex w-[150px] h-[150px] md:w-[300px] md:h-[300px] lg:w-[480px] lg:h-[480px] "
             >
-              <img src={world.img} alt={world.name} />
+              <img
+                src={world.img}
+                alt={world.name}
+                className={`transition-opacity duration-700 ease-in-out ${
+                  isVisible ? "opacity-100" : "opacity-50"
+                }`}
+              />
             </div>
           </div>
           <div
@@ -133,7 +135,10 @@ const World = () => {
               </div>
               <div
                 id="text"
-                className="flex flex-col gap-y-4 h-[215px] md:items-center lg:items-start lg:h-[254px]"
+                className={`flex flex-col gap-y-4 h-[215px] md:items-center lg:items-start lg:h-[254px]
+                  transition-opacity duration-700 ease-in-out ${
+                    isVisible ? "opacity-100" : "opacity-50"
+                  }`}
               >
                 <div
                   id="1sttext"
@@ -165,7 +170,9 @@ const World = () => {
                   </div>
                   <div
                     id="number"
-                    className="font-Bellefair  text-white text-center lg:text-start text-xl"
+                    className={`font-Bellefair  text-white text-center lg:text-start text-xl transition-opacity duration-700 ease-in-out ${
+                      isVisible ? "opacity-100" : "opacity-50"
+                    }`}
                   >
                     {world.distance.toUpperCase()}
                   </div>
@@ -179,7 +186,9 @@ const World = () => {
                   </div>
                   <div
                     id="number"
-                    className="font-Bellefair  text-white text-center lg:text-start text-xl"
+                    className={`font-Bellefair  text-white text-center lg:text-start text-xl transition-opacity duration-700 ease-in-out ${
+                      isVisible ? "opacity-100" : "opacity-50"
+                    }`}
                   >
                     {world.travel.toUpperCase()}
                   </div>

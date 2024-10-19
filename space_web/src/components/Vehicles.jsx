@@ -37,9 +37,15 @@ const techs = [
 ];
 const Vehicles = () => {
   const [data, setData] = useState(techs[0]);
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleClick = (value) => {
-    setData(value);
+    setIsVisible(false);
+
+    setTimeout(() => {
+      setData(value);
+      setIsVisible(true);
+    }, 250);
   };
 
   return (
@@ -73,7 +79,13 @@ const Vehicles = () => {
             id="image"
             className="hidden lg:flex lg:flex-row pt-[64px] lg:py-0  h-[322px]  lg:h-[600px]"
           >
-            <img src={data.images.portrait} alt="" />
+            <img
+              src={data.images.portrait}
+              alt=""
+              className={`transition-opacity duration-700 ease-in-out ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            />
           </div>
           <div
             id="image"
@@ -86,7 +98,9 @@ const Vehicles = () => {
             <img
               src={data.images.landscape}
               alt=""
-              className="object-contain"
+              className={`object-contain transition-opacity duration-700 ease-in-out ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
             />
           </div>
           <div
@@ -127,14 +141,18 @@ const Vehicles = () => {
                 </div>
                 <div
                   id="name"
-                  className="h-[28px] text-center md:h-[46px] font-Bellefair text-white text-2xl md:text-5xl justify-center lg:self-start"
+                  className={`h-[28px] text-center md:h-[46px] font-Bellefair text-white text-2xl md:text-5xl justify-center lg:self-start transition-opacity duration-700 ease-in-out ${
+                    isVisible ? "opacity-100" : "opacity-0"
+                  }`}
                 >
                   {data.name.toUpperCase()}
                 </div>
               </div>
               <div
                 id="description"
-                className="font-BarlowRegular text-blue-200 text-center lg:text-start md:w-[512px] self-center"
+                className={`font-BarlowRegular text-blue-200 text-center lg:text-start md:w-[512px] self-center transition-opacity duration-700 ease-in-out ${
+                  isVisible ? "opacity-100" : "opacity-0"
+                }`}
               >
                 {data.description}
               </div>

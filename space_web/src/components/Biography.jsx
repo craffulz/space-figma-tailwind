@@ -3,7 +3,7 @@ import douglas from "../assets/crew/image-douglas-hurley.webp";
 import cark from "../assets/crew/image-mark-shuttleworth.webp";
 import victor from "../assets/crew/image-victor-glover.webp";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const crew = [
   {
@@ -33,16 +33,16 @@ const crew = [
 ];
 
 const Biography = () => {
-  const refs = useRef([]);
-
-  //Data a mostrar
+  const [isVisible, setIsVisible] = useState(true);
   const [data, setData] = useState(crew[0]);
 
-  //funcion que setea la Data a mostrar y cambia el 'active' dot
   function handleDotClick(index, value) {
-    console.log(value);
-    setData(value);
-    refs.current[index].classList.add("bg-white");
+    setIsVisible(false);
+
+    setTimeout(() => {
+      setData(value);
+      setIsVisible(true);
+    }, 250);
   }
 
   const mark = data;
@@ -76,7 +76,9 @@ const Biography = () => {
         >
           <div
             id="explanation"
-            className="flex flex-col gap-y-10 justify-between"
+            className={`flex flex-col gap-y-10 justify-between transition-opacity duration-700 ease-in-out ${
+              isVisible ? "opacity-100" : "opacity-0"
+            }`}
           >
             <div
               id="explanation-true"
@@ -121,7 +123,6 @@ const Biography = () => {
                       className={`h-[10px] w-[10px] lg:h-[15px] lg:w-[15px] rounded-full ${
                         value.name === data.name ? "bg-white" : "bg-gray-600"
                       } hover:bg-gray-400 cursor-pointer`}
-                      ref={(el) => (refs.current[index] = el)}
                       onClick={() => handleDotClick(index, value)}
                     ></div>
                   );
@@ -130,10 +131,6 @@ const Biography = () => {
             </div>
           </div>
           <div id="image" className="flex flex-row justify-center">
-            {/* <div
-              id="crew-image"
-              className="flw-[270px] h-[340px] md:w-[446px] md:h-[560px] lg:w-[540px] lg:h-[676px] relative "
-            ></div>*/}
             <div
               id="crew-image"
               className="flex lg:items-end  md:h-[560px] lg:w-[540px] lg:h-[676px] relative"
@@ -141,7 +138,8 @@ const Biography = () => {
               <img
                 src={mark.img}
                 alt={mark.name}
-                className="object-cover lg:object-contain"
+                className={`object-cover lg:object-contain transition-opacity duration-700 ease-in-out ${
+              isVisible ? "opacity-100" : "opacity-0"}`}
               />
               <div
                 id="mask"
