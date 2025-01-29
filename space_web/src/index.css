@@ -18,6 +18,10 @@
   src: url('./assets/fonts/BarlowCondensed-Regular.ttf');
 }
 
+body{
+  background-color: black;
+}
+
 .bg-fixed {
  
   background-attachment: fixed; /* Fijar el fondo */
