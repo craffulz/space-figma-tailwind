@@ -7,7 +7,8 @@ const home = () => {
   return (
     <div
       className={`flex flex-col overflow-y-scroll md:overflow-hidden justify-between relative animate-fadeIn 
-          bg-home_mobile md:bg-home_tablet lg:bg-home bg-fixed bg-cover bg-center w-full h-[932px] md:min-h-screen `}
+           w-full h-[932px] md:min-h-screen 
+           bg-home_mobile md:bg-home_tablet lg:bg-home md:bg-cover`}
     >
       <ScrollRestoration />
       <NavbarPicker />
