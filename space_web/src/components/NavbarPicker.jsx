@@ -28,7 +28,7 @@ const NavbarPicker = () => {
 
   return (
     <div ref={ref} className="w-full">
-      {width > 440 ? <Navbar /> : <MobileNavbar />}
+      {width > 825 ? <Navbar /> : <MobileNavbar />}
     </div>
   );
 };
