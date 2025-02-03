@@ -51,7 +51,7 @@ const Vehicles = () => {
   return (
     <div
       id="main-content"
-      className="flex flex-col gap-y-2 p-6 pb-[48px] md:p-10 lg:p-0 lg:py-[48px] relative z-1  lg:items-center overflow-hidden animate-fadeIn"
+      className="flex flex-col gap-y-2 p-6 pb-[48px] md:p-10 lg:p-0 lg:py-[48px] relative  lg:items-center overflow-hidden animate-fadeIn"
     >
       <div id="content" className="flex flex-col gap-y-6">
         <div

@@ -20,7 +20,7 @@ const MobileNavbar = () => {
     <>
       <div
         id="navigation"
-        className="flex flex-row flex-grow w-full h-[88px] py-6 justify-between "
+        className="flex flex-row flex-grow w-full py-6 justify-between z-20"
       >
         <div id="logo" className="flex flex-row gap-[64px] pl-6">
           <div id="true-logo" className="h-[40px] w-[40px]">
@@ -43,7 +43,7 @@ const MobileNavbar = () => {
       </div>
       <div
         id="aside"
-        className={`absolute overflow-y-scroll z-12 top-0 right-0 h-screen bg-opacity-30 backdrop-blur-2xl transition-all duration-500 ease-in-out ${
+        className={`absolute overflow-y-scroll z-20 top-0 right-0 min-h-full bg-opacity-30 backdrop-blur-2xl transition-all duration-500 ease-in-out ${
           visible ? "w-[254px] pl-8" : "w-0 pl-0"
         }  flex flex-col gap-y-[48px]`}
       >
