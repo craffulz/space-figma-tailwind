@@ -15,9 +15,11 @@ Once on the site, click the **"Explore"** button to begin your journey.
 
 ## Usage/Examples
  
-1️⃣ **Visit the Website** Go to [kjsdghfkljsdf.com](http://kjsdghfkljsdf.com).
+1️⃣ **Visit the Website** 
+Go to [the web](https://space-figma-tailwind.vercel.app/).
     
-    Click the **"Explore"** button to start exploring the space journey.
+Click the **"Explore"** button to start exploring the space journey.
+
 2️⃣ **Navigate the Pages** Use the navigation bar to switch between the following pages:     
 - **Destination** – Click on the names of different planets to explore them.
 - **Crew** – Click on the different crew members to get information.
@@ -34,7 +36,9 @@ Once on the site, click the **"Explore"** button to begin your journey.
 Before installing, make sure you have the following installed on your system: 
 - **Node.js** (version 16 or higher) 
 - **pnpm** (installed globally) → Install with: 
-```bash npm install -g pnpm ``` 
+```bash 
+npm install -g pnpm 
+``` 
 ### Installation Steps 
 1️⃣ **Clone the Repository** 
 ```bash 
